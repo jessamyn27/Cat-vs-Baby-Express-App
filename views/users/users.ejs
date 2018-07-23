@@ -5,7 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+
+  <%include ../partials/header%>
     <h1><%=users.userName%>'s Profile</h1>
+
     <form action="/users" method="POST">
       <img src="<%=users.profilePictures%>" alt="">
       <input type="url" name="profilePicture" placeholder="Upload Profile Pic">
