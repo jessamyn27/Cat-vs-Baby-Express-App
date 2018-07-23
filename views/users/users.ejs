@@ -7,16 +7,18 @@
   <body>
 
   <%include ../partials/header%>
-    <h1>User Page</h1>
+    <h1><%=users.userName%>'s Profile</h1>
 
-    <h1>(user name)'s' Profile</h1>
     <form action="/users" method="POST">
+      <img src="<%=users.profilePictures%>" alt="">
       <input type="url" name="profilePicture" placeholder="Upload Profile Pic">
       <input type="text" name="bio" placeholder="bio">
       <button type="editProfile">Edit Profile</button>
 <!-- input scroll down button for animal or baby photo upload -->
 <br></br>
-<h1>(user name)'s Cute Photos'</h1>
+<h1><%=users.userName%>'s Cute Photos'</h1>
+<img src="<%=users.photos.catPhotos[1].url%>" alt="">
+
         <select name="cutePhoto">
           <!-- if catPhoto is chosen, redirect store to cat database
           if now, redirect store to baby database -->
@@ -27,15 +29,12 @@
         <br><br>
         <input type="submit">
       </form>
-
     </form>
     <ul>
     </ul>
     <ul>
-      animal or baby photo
     </ul>
     <ul>
-      edit for animal or baby photo
     </ul>
 
     <%include ../partials/footer%>
