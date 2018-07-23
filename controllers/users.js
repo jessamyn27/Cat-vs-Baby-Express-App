@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/users');
+// const User = require('../models/users');
 // const Photo = require('..models/photos');
-
+const User = require('../models/userSeeds');
+const Photo = require('../models/photoSeeds');
 // get route for users
 router.get('/', (req, res) => {
   // User.find({}, (err, foundUsers) => {
+
       res.render('users/users.ejs', {
-  //       users: foundUsers
-  //     });
+        users: User[0]
+        //grabbing info 'user' is a variable name in the ejs "User is what we just called the model (above) to require"  //     });
   });
 });
 
