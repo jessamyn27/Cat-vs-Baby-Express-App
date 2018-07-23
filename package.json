@@ -1,5 +1,5 @@
 {
-  "name": "cat-vs-baby",
+  "name": "cat-v-baby",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
@@ -16,5 +17,17 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.2.4",
     "morgan": "~1.9.0"
-  }
+  },
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessamyn27/cat-v-baby.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessamyn27/cat-v-baby/issues"
+  },
+  "homepage": "https://github.com/jessamyn27/cat-v-baby#readme"
 }

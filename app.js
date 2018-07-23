@@ -5,7 +5,7 @@ const cookieParser  = require('cookie-parser');
 const logger        = require('morgan');
 
 const app           = express();
-// const bodyParser     = require('body-parser');
+const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 
 const usersController   = require('./controllers/users');
@@ -13,6 +13,7 @@ const usersController   = require('./controllers/users');
 const indexController = require('./controllers/index');
 // const photosController = require('./controllers/photos');
 const homeController = require('./controllers/home');
+
 
 // Set up middleware
 app.use(methodOverride('_method'));
