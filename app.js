@@ -14,6 +14,7 @@ const indexController = require('./controllers/index');
 const photosController = require('./controllers/photos');
 const homeController = require('./controllers/home');
 
+const User = require('./models/userSeeds');
 
 // Set up middleware
 app.use(methodOverride('_method'));
@@ -27,9 +28,10 @@ app.use('/photos', photosController);
 app.use('/home', homeController);
 
 app.get('/', (req, res) => {
-  res.render('index.ejs');
+  res.render('index.ejs', {
+    users: User[0]
+  });
 });
-
 // require db
 require('./db/db');
 
