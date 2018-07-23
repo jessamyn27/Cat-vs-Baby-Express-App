@@ -9,9 +9,9 @@ const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 
 const usersController   = require('./controllers/users');
-// const authController   = require('./controllers/auth');
+const authController   = require('./controllers/auth');
 const indexController = require('./controllers/index');
-// const photosController = require('./controllers/photos');
+const photosController = require('./controllers/photos');
 const homeController = require('./controllers/home');
 
 
@@ -20,10 +20,10 @@ app.use(methodOverride('_method'));
 // app.use(bodyParser.urlencoded({extended: false}));
 
 // set up controller routes
-// app.use('/auth', authController);
+app.use('/auth', authController);
 app.use('/users', usersController);
 app.use('/index', indexController);
-// app.use('/photos', photosController);
+app.use('/photos', photosController);
 app.use('/home', homeController);
 
 app.get('/', (req, res) => {
