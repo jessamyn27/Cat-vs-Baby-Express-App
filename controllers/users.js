@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/users');
 // const Photo = require('..models/photos');
 
+// get route for users
 router.get('/', (req, res) => {
   // User.find({}, (err, foundUsers) => {
       res.render('users/users.ejs', {
@@ -11,7 +12,7 @@ router.get('/', (req, res) => {
   });
 });
 
-// GET ROUTE
+// GET ROUTE for actual user
 // /user/:id - Page displaying profile information (also our edit page)
 router.get('/:id', (req, res) => {
   res.send('page displaying profile info / also our edit page')
@@ -26,6 +27,10 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id/update', (req, res) => {
   console.log('update profile info edit');
   res.redirect('/users');
+});
+
+router.post('/', (req, res) => {
+  res.send(req.body);
 });
 
 // DELETE ROUTE
