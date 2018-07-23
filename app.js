@@ -17,7 +17,7 @@ const homeController = require('./controllers/home');
 
 // Set up middleware
 app.use(methodOverride('_method'));
-// app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 // set up controller routes
 app.use('/auth', authController);
