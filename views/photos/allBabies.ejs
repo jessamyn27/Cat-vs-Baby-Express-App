@@ -8,6 +8,12 @@
 </head>
 <body>
   <h1>All babies uploaded with a change </h1>
+  <% photos.forEach((e)=>{ %>
+    <% e.catPhotos.forEach((e)=>{ %>
+      <img src="<%=e.url%>" alt="<%=e.description%>">
+      <p><%=e.description%> </p>
+    <%})%>
+  <%})%>
   
 </body>
 </html>
