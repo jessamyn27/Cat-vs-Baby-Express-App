@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const Photos = require('../models/photo');
+const PhotoSeeds = require('../models/photoSeeds');
 
 router.get('/babies/showall', async(req,res,err)=>{
   // try {
@@ -14,7 +15,9 @@ router.get('/babies/showall', async(req,res,err)=>{
   // } catch (err) {
   //   res.send(err);
   // }
-  res.render('photos/allBabies.ejs')
+  res.render('photos/allBabies.ejs', {
+      photos: PhotoSeeds
+  })
 });
 
 router.get('/cats/showall', async (req,res,err)=>{
