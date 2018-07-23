@@ -7,14 +7,27 @@
   <body>
     <h1>User Page</h1>
 
-    <h1>Profile</h1>
-    <form action="/users/users" method="POST">
-      <input type="text" name="userName" placeholder="User Name">
-      <input type="password" name="password" placeholder="Password">
-      <button type="submit">Log in</button>
+    <h1>(user name)'s' Profile</h1>
+    <form action="/users" method="POST">
+      <input type="url" name="profilePicture" placeholder="Upload Profile Pic">
+      <input type="text" name="bio" placeholder="bio">
+      <button type="editProfile">Edit Profile</button>
+<!-- input scroll down button for animal or baby photo upload -->
+<br></br>
+<h1>(user name)'s Cute Photos'</h1>
+        <select name="cutePhoto">
+          <!-- if catPhoto is chosen, redirect store to cat database
+          if now, redirect store to baby database -->
+          <option value="catPhoto">Cute Animal</option>
+          <option value="babyPhoto">Cute Baby</option>
+          <input type="url" name="upload" placeholder="Upload A Cute Photo"
+        </select>
+        <br><br>
+        <input type="submit">
+      </form>
+
     </form>
     <ul>
-      edit button
     </ul>
     <ul>
       animal or baby photo
