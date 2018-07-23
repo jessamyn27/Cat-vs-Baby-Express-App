@@ -6,7 +6,13 @@
   </head>
   <body>
     <h1>User Page</h1>
-    <p>Profile Info Goes Here (name, bio, profile photo)</p>
+
+    <h1>Profile</h1>
+    <form action="/users/users" method="POST">
+      <input type="text" name="userName" placeholder="User Name">
+      <input type="password" name="password" placeholder="Password">
+      <button type="submit">Log in</button>
+    </form>
     <ul>
       edit button
     </ul>
