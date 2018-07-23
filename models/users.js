@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 
+const Photos = require('./photo');
 
-
-const userSchema = new mongoose.Schema({
-  username: String,
-  password: String,
-  // photos: [User.schema],
-  profilePicture: String,
-  bio: String,
-  socialMedia: [{ twitter: String, facebook: String, instagram: String }],
-});
-
+const userSchema = mongoose.Schema({
+  userName: {type: String, required: true, unique: true},
+  password: {type: String, required: true},
+  photos: [Photos.schema],
+  profilePicture:  String,
+  bio: {type: String, maxlength: 150},
+  socialMedia: [{twitter:String, facbook:String, intagram: String}]
+})
 
 module.exports = mongoose.model('User', userSchema);
