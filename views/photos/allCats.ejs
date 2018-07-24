@@ -7,9 +7,14 @@
   <title>All uploaded babies</title>
 </head>
 <body>
-<%include ../partials/header%>
-  <h1>All cats uploaded with a change </h1>
-  
+<% for (let i = 0; i < photos.length; i++){%>
+  <%console.log(photos[i].catPhotos)%>
+  <%for (let p = 0; p < photos[i].catPhotos.length; p++){%>
+    <img src="<%=photos[i].catPhotos[p].url%>" alt="<%=photos[i].catPhotos[p].description%>">
+    <p><%=photos[i].catPhotos[p].description%></p>
+  <%}%>
+<%}%>
+
   <%include ../partials/footer%>
 </body>
 </html>
