@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/userSeeds');
 const Photo = require('../models/photoSeeds');
+
 // const Home = require('../models/home');
 // const Photo = require('..models/photos');
 
@@ -23,13 +24,14 @@ router.get('/', (req, res) => {
 router.get('/leaderboard', (req, res) => {
   // display top 20 ranked photos for loop
   res.render('home/leaderboard.ejs', {
+    users: User[0]
 
   });
 });
 
 // // /home/about - about page with description of rules
 router.get('/about', (req, res) => {
-  
+
   res.render('home/about.ejs', {
 
   });

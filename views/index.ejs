@@ -10,12 +10,16 @@
     <h1>Cat VS Baby!</h1>
 <!-- // random selection of one baby photo and one cat photo -->
 <p><%=users.photos.catPhotos[1].description%></p>
-<img src="<%=users.photos.catPhotos[1].url%>" alt="">
+<a href="/home">
+<img src="<%=users.photos.catPhotos[1].url%>" alt="<%=users.photos.catPhotos[1].url%>"
+></a>
 <br></br>
 <!-- set up a tag href on each photo that takes you to the homepage -->
-<p><%=users.photos.babyPhotos[0].description%></p>
-<img src="<%=users.photos.babyPhotos[0].url%>" alt="">
 
+<p><%=users.photos.babyPhotos[0].description%></p>
+<a href="/home">
+<img src="<%=users.photos.babyPhotos[0].url%>" alt="<%=users.photos.catPhotos[1].url%>"
+></a>
 
 
   <h3>Wanna Add Your Cute Photo?
@@ -24,7 +28,6 @@
 <a href="/auth/login">Log In</a></li>
 <br>
 <a href="/auth/register">Register</a>
-
 
 
 

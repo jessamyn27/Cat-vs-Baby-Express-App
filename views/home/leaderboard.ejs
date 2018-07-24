@@ -9,6 +9,19 @@
   <br>
       <h1>Top Ranking Cuteness</h1>
   <br>
+  <p><%=users.photos.catPhotos[1].description%></p>
+  <a href="/users">
+  <img src="<%=users.photos.catPhotos[1].url%>" alt="<%=users.photos.catPhotos[1].url%>"
+  ></a>
+  <br></br>
+  <!-- set up a tag href on each photo that takes you to the homepage -->
+
+  <p><%=users.photos.babyPhotos[0].description%></p>
+  <a href="/users">
+  <img src="<%=users.photos.babyPhotos[0].url%>" alt="<%=users.photos.catPhotos[1].url%>"
+  ></a>
+
+
   <!-- loop through array of photos and select the top 20 with image, name (description) -->
 
     <%include ../partials/footer%>

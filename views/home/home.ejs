@@ -12,11 +12,12 @@
     <h1>Click The Cutest Photo To Play!</h1>
 
         <p><%=users.photos.catPhotos[1].description%></p>
-        <img src="<%=users.photos.catPhotos[1].url%>" alt="">
+        <img src="<%=users.photos.catPhotos[1].url%>" alt="<%=users.photos.catPhotos[1].description%>">
         <br></br>
 
+
         <p><%=users.photos.babyPhotos[0].description%></p>
-        <img src="<%=users.photos.babyPhotos[0].url%>" alt="">
+        <img src="<%=users.photos.babyPhotos[0].url%>" alt="<%=users.photos.babyPhotos[1].description%>">
 
     <%include ../partials/footer%>
   </body>
