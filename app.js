@@ -3,6 +3,8 @@ const express       = require('express');
 const path          = require('path');
 const cookieParser  = require('cookie-parser');
 const logger        = require('morgan');
+const session = require('express-session');
+
 
 const app           = express();
 const bodyParser     = require('body-parser');
@@ -13,6 +15,14 @@ const authController   = require('./controllers/auth');
 const indexController = require('./controllers/index');
 const photosController = require('./controllers/photos');
 const homeController = require('./controllers/home');
+
+// set Up our session
+app.use(session({
+  secret: 't98ieaious;apfa9oiaidfhnidfaiai3u72o3948872ijoaifkn',
+  resave: false, // only save when the session object has been modified
+  saveUninitialized: false // useful for login sessions, we only want to to save when we modify
+  // session
+}));
 
 const User = require('./models/userSeeds');
 
@@ -39,13 +49,7 @@ require('./db/db');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// set Up our session
-// app.use(session({
-//   secret: 'this is a random secret string that you make up',
-//   resave: false, // only save when the session object has been modified
-//   saveUninitialized: false // useful for login sessions, we only want to to save when we modify
-//   // session
-// }));
+
 
 app.use(logger('dev'));
 app.use(express.json());

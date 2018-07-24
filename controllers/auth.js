@@ -16,24 +16,24 @@ router.get('/register', (req,res)=>{
 // Login Request 
 router.post('/login', async (req,res, err)=>{
   console.log('hitting the login request route')
-  // try {
-  //   const foundUser =   await User.findOne({username: req.body.username});
+  try {
+    const foundUser =   await User.findOne({userName: req.body.userName});
     
-  //   if (bcrypt.compareSync(req.body.password, foundUser.password)) {
-  //     req.session.password = true;
-  //     req.session.loggedIn = true;
-  //     req.session.username = req.body.username;
-  //     res.redirect('/home/index');
-  //   } else {
-  //     console.log('password was incorrect')
-  //     res.redirect('/auth/login')
-  //   }
-  // } catch (err) {
-  //    console.log( 'Username was not found');
-  //     res.redirect('/auth/login')
-  // }
+    if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+      req.session.password = true;
+      req.session.loggedIn = true;
+      req.session.userName = req.body.userName;
+      console.log(req.session)
+      res.redirect('/home');
+    } else {
+      console.log('password was incorrect')
+      res.redirect('/auth/login')
+    }
+  } catch (err) {
+     console.log( 'Username was not found');
+      res.redirect('/auth/login')
+  }
 
-  res.send(req.body);
 });
 
 // Register Request
@@ -43,14 +43,17 @@ router.post('/register', (req,res)=>{
   const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
 
   const newUser = {};
-  newUser.username = req.body.username;
+  newUser.userName = req.body.userName;
   newUser.password = passwordHash;
-  // User.create(newUser, (err, createdUser)=>{
-  //   req.session.username = createdUser.username;
-  //   req.session.loggedIn = true;
-  //   res.redirect('/home/index')
-  // })
-  res.send(newUser);
+  console.log(newUser, 'new user');
+  User.create(newUser, (err, createdUser)=>{
+    console.log(createdUser);
+    console.log(req.session, 'req.session');
+    req.session.userName = createdUser.username;
+    req.session.loggedIn = true;
+    res.redirect('/home')
+  })
+  
 });
 
 // LogOut 
