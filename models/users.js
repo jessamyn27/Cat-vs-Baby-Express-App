@@ -8,7 +8,7 @@ const userSchema = mongoose.Schema({
   photos: [Photos.schema],
   profilePicture:  String,
   bio: {type: String, maxlength: 150},
-  socialMedia: [{twitter:String, facbook:String, intagram: String}]
+  socialMedia: [{twitter:String, facebook:String, instagram: String}]
 })
 
 module.exports = mongoose.model('User', userSchema);
