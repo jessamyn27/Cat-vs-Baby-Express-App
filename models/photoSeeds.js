@@ -57,7 +57,8 @@ const photoSeed = [{
     url: 'https://www.petsworld.in/blog/wp-content/uploads/2014/09/adorable-cat-1024x576.jpg',
     description: 'this is cuuuute',
     rank: 2
-  }]
+  }], // Check schema for this out put 
+  babyPhotos: [{url:'', description:'', rank:0}]
 }, {
   catPhotos: [{
     url: 'https://www.petsworld.in/blog/wp-content/uploads/2014/09/adorable-cat-1024x576.jpg',

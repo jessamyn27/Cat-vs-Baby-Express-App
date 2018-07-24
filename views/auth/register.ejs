@@ -13,6 +13,15 @@
   <form action="/auth/register" method="POST">
     <input type="text" name="userName" placeholder="Username">
     <input type="password" name="password" placeholder="Password">
+    <input type="url" placeholder="Profile Picture" name="profilePicture">
+    <textarea name="bio" id="" cols="30" rows="10">Describe yourself</textarea>
+    <select name="cutePhoto">
+      <!-- if catPhoto is chosen, redirect store to cat database
+      if now, redirect store to baby database -->
+      <option value="catPhoto">Cute Animal</option>
+      <option value="babyPhoto">Cute Baby</option>
+      </select>
+      <input type="url" name="upload" placeholder="Upload A Cute Photo">
     <button type="submit"> Register</button>
   </form>
 
