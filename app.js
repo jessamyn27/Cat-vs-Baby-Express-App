@@ -16,6 +16,9 @@ const indexController = require('./controllers/index');
 const photosController = require('./controllers/photos');
 const homeController = require('./controllers/home');
 
+// set up CSS 
+app.use(express.static('public'));
+
 // set Up our session
 app.use(session({
   secret: 't98ieaious;apfa9oiaidfhnidfaiai3u72o3948872ijoaifkn',

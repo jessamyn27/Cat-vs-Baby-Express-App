@@ -20,15 +20,22 @@ router.get('/:id', (req, res) => {
   res.send('page displaying profile info / also our edit page')
 });
 
-// PUT ROUTE
+// PUT ROUTE / EDIT
 // /user/:id/update - (photos are not included in the update request , only profile information);
+
+// $this->redirect($request->getReferer());
+
+// var myRequest = new Request('flowers.jpg');
+// var myReferrer = myRequest.referrer; // returns "about:client" by default
+
 router.get('/:id/edit', (req, res) => {
+
   res.send('edit for profile page')
 })
 
 router.put('/:id/update', (req, res) => {
   console.log('update profile info edit');
-  res.redirect('/users');
+  res.redirect(req.getReferer());
 });
 
 router.post('/', (req, res) => {
