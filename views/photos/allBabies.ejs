@@ -10,7 +10,8 @@
 <%include ../partials/header%>
   <h1>All babies uploaded with a change </h1>
   <% photos.forEach((e)=>{ %>
-    <% e.catPhotos.forEach((e)=>{ %>
+  <%console.log(e.babyPhotos, 'all baby photos');%>
+    <% e.babyPhotos.forEach((e)=>{ %>
       <img src="<%=e.url%>" alt="<%=e.description%>">
       <p><%=e.description%> </p>
     <%})%>

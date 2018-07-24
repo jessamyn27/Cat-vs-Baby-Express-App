@@ -7,9 +7,9 @@ const PhotoSeeds = require('../models/photoSeeds');
 
 router.get('/babies/showall', async(req,res,err)=>{
   // try {
-  //   const allBabies = await Photos.find({babyPhotos: {$exists: true}});
-
-  //   res.render('/photos/allBabies.ejs', {
+  //   const allBabies = await Photo.find({babyPhotos: {$exists: true}});
+  //   console.log(allBabies);
+  //   res.render('photos/allBabies.ejs', {
   //     babyPhotos: allBabies
   //   })
   // } catch (err) {

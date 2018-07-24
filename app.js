@@ -29,6 +29,10 @@ const User = require('./models/userSeeds');
 // Set up middleware
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
+app.use((req,res,next)=>{
+  console.log(req.session);
+  next(); 
+})
 
 // set up controller routes
 app.use('/auth', authController);
