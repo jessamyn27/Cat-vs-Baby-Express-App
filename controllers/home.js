@@ -11,6 +11,7 @@ const Photo = require('../models/photoSeeds');
 
 // /home/index - main
 router.get('/', (req, res) => {
+  // display random display of id in catPhotos against id in babyPhotos
   // User.find({}, (err, foundUsers) => {
       res.render('home/home.ejs', {
         users: User[0]
@@ -20,6 +21,7 @@ router.get('/', (req, res) => {
 
 // /home/leaderBoard - Global Leaderboard
 router.get('/leaderboard', (req, res) => {
+  // display top 20 ranked photos for loop
   res.render('home/leaderboard.ejs', {
 
   });
@@ -27,6 +29,7 @@ router.get('/leaderboard', (req, res) => {
 
 // // /home/about - about page with description of rules
 router.get('/about', (req, res) => {
+  
   res.render('home/about.ejs', {
 
   });

@@ -11,10 +11,14 @@
 
     <form action="/users" method="POST">
       <img src="<%=users.profilePictures%>" alt="">
+      <!-- grab user id by name from user database -->
       <input type="url" name="profilePicture" placeholder="Upload Profile Pic">
-      <input type="text" name="bio" placeholder="bio">
+      <!-- if user is logged in with a profile photo upload it or let them  profile photo that attaches to id -->
       <button type="editProfile">Edit Profile</button>
-<!-- input scroll down button for animal or baby photo upload -->
+      <!-- if else statement for listener clicked button, show form page for edit -->
+      <br>
+<textarea name="name" rows="3" cols="40">bio</textarea>
+    <!-- text area should only be 80 characters -->
 <br></br>
 <h1><%=users.userName%>'s Cute Photos'</h1>
 <img src="<%=users.photos.catPhotos[1].url%>" alt="">

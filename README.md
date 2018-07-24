@@ -10,7 +10,8 @@
 
 ### Overview
 
-
+### Stretch Goals
+comments section in the home (game) page below the photos
 ---
 ### MVP
 

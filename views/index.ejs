@@ -5,20 +5,29 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Splash Page FUN time in Texas</h1>
-    <p></p>
-    <h2>Welcome To Cat VS Baby! Click To Begin</h2>
+<h1>Click The Cutest Photo To Play</h1>
+    <h3>the original...</h3>
+    <h1>Cat VS Baby!</h1>
+<!-- // random selection of one baby photo and one cat photo -->
 <p><%=users.photos.catPhotos[1].description%></p>
-    <ul>
+<img src="<%=users.photos.catPhotos[1].url%>" alt="">
+<br></br>
+<!-- set up event listener on each photo that takes you to the homepage -->
+<p><%=users.photos.babyPhotos[0].description%></p>
+<img src="<%=users.photos.babyPhotos[0].url%>" alt="">
 
-    <ul>
-<button type="logIn" name="LogIn">Log In</button>
-    </ul>
-    <ul>
-      <button type="Register" name="Register">Register</button>
-    </ul>
-    <ul>
-      Thanks For Checking Us Out, We Love Our Fans!
-    </ul>
+
+
+  <h3>Wanna Add Your Cute Photo?
+<br>
+    Log In To Set Up Your Profile!</h3>
+<a href="/auth/login">Log In</a></li>
+<br>
+<a href="/auth/register">Register</a>
+
+
+
+
+
   </body>
 </html>
