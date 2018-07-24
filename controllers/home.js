@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/userSeeds');
+const Photo = require('../models/photoSeeds');
 // const Home = require('../models/home');
 // const Photo = require('..models/photos');
 
@@ -11,7 +13,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // User.find({}, (err, foundUsers) => {
       res.render('home/home.ejs', {
-  //       users: foundUsers
+        users: User[0]
   //     });
   });
 });
