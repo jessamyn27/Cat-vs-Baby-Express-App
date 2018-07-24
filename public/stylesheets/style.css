@@ -10,6 +10,7 @@ body {
 }
 header {
   text-decoration: none;
+  list-style-type: none;
 
 }
 footer {
@@ -35,8 +36,10 @@ ul.navbar {
     border-right: 1em solid black;
     text-decoration: none;
  }
-  ul.navbar a {
-    text-decoration: none }
+  a {
+    text-decoration: none;
+    list-style-type: none;
+ }
   a:link {
     color: blue }
   a:visited {
