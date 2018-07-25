@@ -33,6 +33,12 @@ const User = require('./models/userSeeds');
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use((req,res,next)=>{
+  if (req.session.loggedIn === true) {
+  
+  console.log(req.session); } else {
+    req.session.loggedIn = false;
+    req.session.userName = false;
+  }
   console.log(req.session);
   next(); 
 })

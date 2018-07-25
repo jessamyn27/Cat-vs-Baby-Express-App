@@ -53,7 +53,8 @@ router.get('/', async(req, res,err) => {
   //  console.log(allBabyPhotos)
    res.render('home/home.ejs', {
      randomCat: allCats[randomCat],
-     randomBaby: allBabies[randomBaby]
+     randomBaby: allBabies[randomBaby],
+     session: req.session
    });
   }
 
