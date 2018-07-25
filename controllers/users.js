@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 // const User = require('../models/users');
 // const Photo = require('..models/photos');
-const User = require('../models/userSeeds');
-const Photo = require('../models/photoSeeds');
+const User = require('../models/users');
+const Photo = require('../models/photo');
 // get route for users
 router.get('/', (req, res) => {
   // User.find({}, (err, foundUsers) => {
@@ -14,9 +14,26 @@ router.get('/', (req, res) => {
   });
 });
 
+// 5b5792e4e5341e45e46a5319
 // GET ROUTE for actual user
 // /user/:id - Page displaying profile information (also our edit page)
-router.get('/:id', (req, res) => {
+router.get('/:id', async(req, res,err) => {
+  try {
+    const foundUser = await User.findById(req.params.id);
+    const photoID = foundUser.photos;
+    const foundPhotos = await Photo.findById(photoID);
+    const allCats = foundPhotos.catPhotos;
+    const allBabies = foundPhotos.babyPhotos;
+    console.log(foundUser.profilePicture);
+
+    res.render('users/users.ejs', {
+      users: foundUser,
+      cats: allCats,
+      babies: allBabies
+    })
+  } catch (err) {
+
+  }
   res.send('page displaying profile info / also our edit page')
 });
 
@@ -26,9 +43,20 @@ router.get('/:id/edit', (req, res) => {
   res.send('edit for profile page')
 })
 
-router.put('/:id/update', (req, res) => {
+router.put('/:id/update', async(req, res,err) => {
   console.log('update profile info edit');
-  res.redirect('/users');
+  const foundUser = await User.findById(req.params.id);
+  if (req.body.profilePicture === '') {
+
+  } else {
+    foundUser.profilePicture = req.body.profilePicture;
+   }
+  
+  foundUser.bio = req.body.bio;
+
+  console.log(foundUser);
+  await foundUser.save();
+  res.redirect(`/users/${req.params.id}`);
 });
 
 router.post('/', (req, res) => {
