@@ -8,40 +8,60 @@
   <body>
 
   <%include ../partials/header%>
-    <h1><%=users.userName%>'s Profile</h1>
+    <h1>
+      <%=users.userName%>'s Profile</h1>
 
-    <form action="/users" method="POST">
-      <img src="<%=users.profilePictures%>" alt="">
+    <img src="<%=users.profilePicture%>" alt="">
+    <form action="/users/<%=users._id%>/update?_method=PUT" method="POST">
+
       <!-- grab user id by name from user database -->
       <input type="url" name="profilePicture" placeholder="Upload Profile Pic">
       <!-- if user is logged in with a profile photo upload it or let them  profile photo that attaches to id -->
       <button type="editProfile">Edit Profile</button>
       <!-- if else statement for listener clicked button, show form page for edit -->
       <br>
-<textarea name="name" rows="3" cols="40">bio</textarea>
-    <!-- text area should only be 80 characters -->
-<br></br>
-<h1><%=users.userName%>'s Cute Photos'</h1>
-<img src="<%=users.photos.catPhotos[1].url%>" alt="">
+      <textarea name="bio" rows="3" cols="40">
+        <%=users.bio%>
+      </textarea>
+      <!-- text area should only be 80 characters -->
+      <br></br>
 
-        <select name="cutePhoto">
-          <!-- if catPhoto is chosen, redirect store to cat database
-          if now, redirect store to baby database -->
-          <option value="catPhoto">Cute Animal</option>
-          <option value="babyPhoto">Cute Baby</option>
-          <input type="url" name="upload" placeholder="Upload A Cute Photo"
-        </select>
-        <br><br>
-        <input type="submit">
-      </form>
+
+      <br>
+      <br>
+      <input type="submit">
     </form>
-    <ul>
-    </ul>
-    <ul>
-    </ul>
-    <ul>
-    </ul>
+    <h1>
+      <%=users.userName%>'s Cute Cat Photos'</h1>
+    <% for (let i = 0; i<cats.length; i++) {%>
+      <img src="<%=cats[i].url%>" alt="<%=cats[i].description%>">
+      <%}%>
 
-    <%include ../partials/footer%>
-  </body>
+        <h1>
+          <%=users.userName%>'s Cute Baby Photos'</h1>
+        <% for (let i = 0; i<babies.length; i++) {%>
+          <img src="<%=babies[i].url%>" alt="<%=babies[i].description%>">
+          <%}%>
+
+
+            <form action='/photos/<%=users._id%>' method="POST">
+              <select name="cutePhoto">
+                <!-- if catPhoto is chosen, redirect store to cat database
+        if now, redirect store to baby database -->
+                <option value="catPhoto">Cute Animal</option>
+                <option value="babyPhoto">Cute Baby</option>
+                <input type="url" name="upload" placeholder="Upload A Cute Photo" </select>
+                <textarea name="description" id="" cols="30" rows="10">Describe ya photo</textarea>
+                <button type="submit">Upload</button>
+            </form>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+
+            <%include ../partials/footer%>
+</body>
+
 </html>
