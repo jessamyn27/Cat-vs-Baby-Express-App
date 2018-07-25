@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
 // /user/:id/update - (photos are not included in the update request , only profile information);
 
 // $this->redirect($request->getReferer());
-
+//
 // var myRequest = new Request('flowers.jpg');
 // var myReferrer = myRequest.referrer; // returns "about:client" by default
 
