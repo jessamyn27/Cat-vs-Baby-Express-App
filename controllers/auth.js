@@ -4,9 +4,11 @@ const User = require('../models/users');
 const bcrypt = require('bcrypt');
 const Photo = require('../models/photo')
 
-// Login page 
+// Login page
 router.get('/login', (req, res) => {
-  res.render('auth/login.ejs')
+  res.render('auth/login.ejs', {
+  
+});
 });
 
 // Register Page
@@ -14,7 +16,7 @@ router.get('/register', (req, res) => {
   res.render('auth/register.ejs')
 })
 
-// Login Request 
+// Login Request
 router.post('/login', async (req, res, err) => {
   console.log('hitting the login request route')
   try {
@@ -50,7 +52,7 @@ router.post('/register', (req, res) => {
   newUser.password = passwordHash;
   newUser.bio = req.body.bio;
   newUser.profilePicture = req.body.profilePicture;
- 
+
 
 
   if (req.body.cutePhoto === 'catPhoto') {
@@ -102,7 +104,7 @@ router.post('/register', (req, res) => {
 
 });
 
-// LogOut 
+// LogOut
 router.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
