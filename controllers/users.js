@@ -58,7 +58,7 @@ router.put('/:id/update', async(req, res,err) => {
   } else {
     foundUser.profilePicture = req.body.profilePicture;
    }
-  
+
   foundUser.bio = req.body.bio;
 
   console.log(foundUser);
@@ -73,6 +73,7 @@ router.post('/', (req, res) => {
 // DELETE ROUTE
 // /user/delete/:id - Delete user account ( Removes all photos owned)
 router.delete('/:id', (req, res) => {
+  
   res.redirect('/users')
 });
 

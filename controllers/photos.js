@@ -30,7 +30,7 @@ router.get('/cats/showall', async (req,res,err)=>{
   } catch (err){
     res.send(err);
   }
-  // res.render('photos/allCats.ejs', {photos: PhotoSeeds});
+
 });
 
 router.post('/:id', async (req,res, err)=>{
@@ -52,9 +52,9 @@ router.post('/:id', async (req,res, err)=>{
 
   } catch(err) {
 
-  }  
+  }
 
-  
+
 })
 
 router.delete('/delete/:id', (req,res)=>{

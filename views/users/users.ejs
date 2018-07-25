@@ -14,18 +14,15 @@
     <img src="<%=users.profilePicture%>" alt="">
     <form action="/users/<%=users._id%>/update?_method=PUT" method="POST">
 
-      <!-- grab user id by name from user database -->
       <input type="url" name="profilePicture" placeholder="Upload Profile Pic">
-      <!-- if user is logged in with a profile photo upload it or let them  profile photo that attaches to id -->
+
       <button type="editProfile">Edit Profile</button>
-      <!-- if else statement for listener clicked button, show form page for edit -->
+
       <br>
       <textarea name="bio" rows="3" cols="40">
         <%=users.bio%>
       </textarea>
-      <!-- text area should only be 80 characters -->
       <br></br>
-
 
       <br>
       <br>
@@ -46,21 +43,17 @@
 
             <form action='/photos/<%=users._id%>' method="POST">
               <select name="cutePhoto">
-                <!-- if catPhoto is chosen, redirect store to cat database
-        if now, redirect store to baby database -->
+
                 <option value="catPhoto">Cute Animal</option>
                 <option value="babyPhoto">Cute Baby</option>
                 <input type="url" name="url" placeholder="Upload A Cute Photo" </select>
-                <textarea name="description" id="" cols="30" rows="10">Describe ya photo</textarea>
-                <button type="submit">Upload</button>
+                <textarea name="description" id="" cols="30" rows="10">Cutie's Name and Favorite Hobby?</textarea>
+                <button type="submit">Upload Photo</button>
             </form>
-            <ul>
-            </ul>
-            <ul>
-            </ul>
-            <ul>
-            </ul>
 
+            <form action="/photos/<%=users.id%>?_method=DELETE" method="POST"><select name="cutePhoto">
+              <button type="submit">Delete Photo</button>
+            </form>
             <%include ../partials/footer%>
 </body>
 

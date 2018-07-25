@@ -9,7 +9,7 @@ const Photo = require('../models/photo');
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
 
 
@@ -22,19 +22,19 @@ router.get('/', async(req, res,err) => {
    const foundPhotos = await Photo.find({babyPhotos: {$exists: true}});
    const allBabies = [];
    const allCats = [];
-    
+
    foundPhotos.forEach((e)=>{
      console.log(e, 'first loop')
-     e.babyPhotos.forEach((e)=>{ 
-       
+     e.babyPhotos.forEach((e)=>{
+
        allBabies.push(e);
      });
     })
 
     foundPhotos.forEach((e)=>{
       console.log(e, 'first loop')
-      e.catPhotos.forEach((e)=>{ 
-        
+      e.catPhotos.forEach((e)=>{
+
         allCats.push(e);
       });
      })
@@ -44,11 +44,11 @@ router.get('/', async(req, res,err) => {
     const randomCat = getRandomIntInclusive(0,allCats.length-1);
     const randomBaby = getRandomIntInclusive(0,allBabies.length-1);
 
-    
 
 
 
-   
+
+
   //  const allBabyPhotos = foundPhotos[2].babyPhotos;
   //  console.log(allBabyPhotos)
    res.render('home/home.ejs', {
@@ -61,11 +61,11 @@ router.get('/', async(req, res,err) => {
 
   }
   // display random display of id in catPhotos against id in babyPhotos
- 
+
 });
 
 // /home/leaderBoard - Global Leaderboard
-router.get('/leaderboard', (req, res) => {
+router.get('home/leaderboard', (req, res) => {
   // display top 20 ranked photos for loop
   // res.render('home/leaderboard.ejs', {
   //   users: User[0]

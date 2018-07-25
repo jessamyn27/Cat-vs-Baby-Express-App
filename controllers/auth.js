@@ -7,7 +7,7 @@ const Photo = require('../models/photo')
 // Login page
 router.get('/login', (req, res) => {
   res.render('auth/login.ejs', {
-  
+
 });
 });
 
@@ -25,6 +25,7 @@ router.post('/login', async (req, res, err) => {
     });
 
     if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+// hide login button and show logout button
       req.session.password = true;
       req.session.loggedIn = true;
       req.session.userName = req.body.userName;
