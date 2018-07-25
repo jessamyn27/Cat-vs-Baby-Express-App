@@ -2,7 +2,7 @@ body {
   background-color: #DEE2D6;
   padding: 30px;
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #8198AD;
+  color: #BF9B8B;
   text-align: left;
   list-style-type: none;
   text-decoration: none;
@@ -29,21 +29,22 @@ ul.navbar {
     text-decoration: none;
  }
 
-  ul.navbar li {
-    background: white;
+  li {
+    background: #C9E2D9;
     margin: 0.5em 0;
     padding: 0.3em;
-    border-right: 1em solid black;
+    border-right: 1em solid #BF9B8B;
     text-decoration: none;
+    list-style-type: none;
  }
-  a {
+  li a {
     text-decoration: none;
     list-style-type: none;
  }
   a:link {
     color: blue }
   a:visited {
-    color: #C09B8A;
+    color: #BF9B8B;
     text-decoration: none;
  }
   address {
