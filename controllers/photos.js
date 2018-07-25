@@ -57,7 +57,14 @@ router.post('/:id', async (req,res, err)=>{
 
 })
 
-router.delete('/delete/:id', (req,res)=>{
+router.delete('/delete/:id', async(req,res,err)=>{
+  try {
+    const foundPhoto = await Photos.find({catPhotos: {$exists: true ,id: req.params.id}})
+    console.log(foundPhoto, 'found photo')
+  } catch (err) {
+ console.log(err);
+  }
+  
   res.send('delete route')
 })
 

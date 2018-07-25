@@ -32,6 +32,9 @@
       <%=users.userName%>'s Cute Cat Photos'</h1>
     <% for (let i = 0; i<cats.length; i++) {%>
       <img src="<%=cats[i].url%>" alt="<%=cats[i].description%>">
+      <form action='/photos/delete/<%=cats[i].id%>?_method=DELETE' method="POST">
+      <button type="submit">Delete Photo</button>
+      </form>
       <%}%>
 
         <h1>
