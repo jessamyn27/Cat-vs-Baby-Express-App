@@ -7,13 +7,18 @@ const Photo = require('../models/photo')
 // Login page
 router.get('/login', (req, res) => {
   res.render('auth/login.ejs', {
+    session: req.session
 
 });
 });
 
 // Register Page
 router.get('/register', (req, res) => {
-  res.render('auth/register.ejs')
+  res.render('auth/register.ejs',{
+    session: req.session
+
+  })
+
 })
 
 // Login Request
@@ -29,8 +34,11 @@ router.post('/login', async (req, res, err) => {
       req.session.password = true;
       req.session.loggedIn = true;
       req.session.userName = req.body.userName;
+      req.session._id = foundUser._id;
       console.log(req.session)
+
       res.redirect('/home');
+
     } else {
       console.log('password was incorrect')
       res.redirect('/auth/login')
@@ -54,8 +62,6 @@ router.post('/register', (req, res) => {
   newUser.bio = req.body.bio;
   newUser.profilePicture = req.body.profilePicture;
 
-
-
   if (req.body.cutePhoto === 'catPhoto') {
     console.log('hitting cat creat')
     const createdPhoto = Photo.create({
@@ -69,9 +75,12 @@ router.post('/register', (req, res) => {
       User.create(newUser, (err, createdUser) => {
         console.log(createdUser, 'this is the created user in DB');
         console.log(req.session, 'req.session');
-        req.session.userName = createdUser.username;
+        req.session.userName = createdUser.userName;
         req.session.loggedIn = true;
+        req.session._id = createdUser._id
+        console.log(req.session, 'req.session after creating user');
         res.redirect('/home')
+
       })
 
     });
@@ -89,8 +98,10 @@ router.post('/register', (req, res) => {
       User.create(newUser, (err, createdUser) => {
         console.log(createdUser, 'this is the created user in DB');
         console.log(req.session, 'req.session');
-        req.session.userName = createdUser.username;
+        req.session.userName = createdUser.userName;
         req.session.loggedIn = true;
+        req.session._id= createdUser._id;
+        console.log(req.session, 'req.session after creating user');
         res.redirect('/home')
       })
 
@@ -111,7 +122,7 @@ router.get('/logout', (req, res) => {
     if (err) {
       res.send('error destorying session');
     } else {
-      res.redirect('/auth');
+      res.redirect('/home');
     }
   })
 })

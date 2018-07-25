@@ -12,74 +12,69 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
 
-
-
 // GET ROUTES
 
 // /home/index - main
-router.get('/', async(req, res,err) => {
-  try{
-   const foundPhotos = await Photo.find({babyPhotos: {$exists: true}});
-   const allBabies = [];
-   const allCats = [];
+router.get('/', async (req, res, err) => {
+  try {
+    const foundPhotos = await Photo.find({
+      babyPhotos: {
+        $exists: true
+      }
+    });
+    const allBabies = [];
+    const allCats = [];
 
-   foundPhotos.forEach((e)=>{
-     console.log(e, 'first loop')
-     e.babyPhotos.forEach((e)=>{
+    foundPhotos.forEach((e) => {
+      // console.log(e, 'first loop')
+      e.babyPhotos.forEach((e) => {
 
-       allBabies.push(e);
-     });
+        allBabies.push(e);
+      });
     })
 
-    foundPhotos.forEach((e)=>{
-      console.log(e, 'first loop')
-      e.catPhotos.forEach((e)=>{
+    foundPhotos.forEach((e) => {
+      // console.log(e, 'first loop')
+      e.catPhotos.forEach((e) => {
 
         allCats.push(e);
       });
-     })
+    })
 
-   console.log(allBabies.length, 'All babies');
-   console.log(allCats.length, 'all cats');
-    const randomCat = getRandomIntInclusive(0,allCats.length-1);
-    const randomBaby = getRandomIntInclusive(0,allBabies.length-1);
+    // console.log(allBabies.length, 'All babies');
+    // console.log(allCats.length, 'all cats');
+    const randomCat = getRandomIntInclusive(0, allCats.length - 1);
+    const randomBaby = getRandomIntInclusive(0, allBabies.length - 1);
 
-
-
-
-
-
-  //  const allBabyPhotos = foundPhotos[2].babyPhotos;
-  //  console.log(allBabyPhotos)
-   res.render('home/home.ejs', {
-     randomCat: allCats[randomCat],
-     randomBaby: allBabies[randomBaby],
-     session: req.session
-   });
-  }
-
-   catch (err) {
+    //  const allBabyPhotos = foundPhotos[2].babyPhotos;
+    //  console.log(allBabyPhotos)
+    res.render('home/home.ejs', {
+      randomCat: allCats[randomCat],
+      randomBaby: allBabies[randomBaby],
+      session: req.session
+    });
+  } catch (err) {
 
   }
   // display random display of id in catPhotos against id in babyPhotos
-
 });
 
 // /home/leaderBoard - Global Leaderboard
-router.get('home/leaderboard', (req, res) => {
+router.get('/leaderboard', (req, res) => {
   // display top 20 ranked photos for loop
-  // res.render('home/leaderboard.ejs', {
+  res.render('home/leaderboard.ejs', {
   //   users: User[0]
-
+  session: req.session
   // });
 });
-
+});
 // // /home/about - about page with description of rules
 router.get('/about', (req, res) => {
 
-  // res.render('home/about.ejs', {
+  res.render('home/about.ejs', {
+    session: req.session
 
-  // });
+  });
 });
 
 

@@ -16,7 +16,7 @@ const indexController = require('./controllers/index');
 const photosController = require('./controllers/photos');
 const homeController = require('./controllers/home');
 
-// set up CSS 
+// set up CSS
 app.use(express.static('public'));
 
 // set Up our session
@@ -34,13 +34,14 @@ app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use((req,res,next)=>{
   if (req.session.loggedIn === true) {
-  
+
   console.log(req.session); } else {
     req.session.loggedIn = false;
     req.session.userName = false;
+    console.log(req.session);
   }
   console.log(req.session);
-  next(); 
+  next();
 })
 
 // set up controller routes

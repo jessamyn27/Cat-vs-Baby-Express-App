@@ -5,7 +5,12 @@
   <li><a href="/photos/babies/showall">All Babies</a></li>
   <li><a href="/photos/cats/showall"> All Cats </a></li>
   <li><a href="/home/about">About Us</a> </li>
-  <li> <a href="/auth/login">Login/Logout</a> </li>
-  <li><a href="/users">Profile</a> </li>
+  <li><%if (session.loggedIn === true){%>
+      <a href="/auth/logout">Logout</a>
+    <%}else {%>
+      <a href="/auth/login">Login</a>
+    <%}%>
+  </li>
+  <li><a href="/users/<%=session._id%>">Profile</a> </li>
 </ul>
 </nav>
