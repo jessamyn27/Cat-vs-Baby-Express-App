@@ -37,13 +37,24 @@ router.post('/:id', async (req,res, err)=>{
   try {
       const foundUser = await User.findById(req.params.id);
       console.log(foundUser);
-  
+      const photoCon = await Photos.findById(foundUser.photos);
+      console.log(photoCon, 'init photocon');
+      if (req.body.cutePhoto === 'catPhoto') {
+        photoCon.catPhotos.push(req.body);
+        photoCon.save();
+        console.log(photoCon, 'photo con after');
+      } else if (req.body.cutePhoto === 'babyPhoto') {
+        photoCon.babyPhotos.push(req.body);
+        photoCon.save();
+        console.log(photoCon);
+      }
+      res.redirect(`/users/${req.params.id}`);
 
   } catch(err) {
 
   }  
 
-  res.send(req.body);
+  
 })
 
 router.delete('/delete/:id', (req,res)=>{
