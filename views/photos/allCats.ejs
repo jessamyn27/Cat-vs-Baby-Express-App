@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>All uploaded babies</title>
+  <%include ../partials/head%>
 </head>
 <body>
+  <%include ../partials/header%>
+  <h1>Cats!</h1>
 <% for (let i = 0; i < photos.length; i++){%>
   <%console.log(photos[i].catPhotos)%>
   <%for (let p = 0; p < photos[i].catPhotos.length; p++){%>

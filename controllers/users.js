@@ -37,9 +37,16 @@ router.get('/:id', async(req, res,err) => {
   res.send('page displaying profile info / also our edit page')
 });
 
-// PUT ROUTE
+// PUT ROUTE / EDIT
 // /user/:id/update - (photos are not included in the update request , only profile information);
+
+// $this->redirect($request->getReferer());
+
+// var myRequest = new Request('flowers.jpg');
+// var myReferrer = myRequest.referrer; // returns "about:client" by default
+
 router.get('/:id/edit', (req, res) => {
+
   res.send('edit for profile page')
 })
 

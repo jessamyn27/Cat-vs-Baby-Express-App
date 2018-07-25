@@ -2,14 +2,14 @@
 <html>
   <head>
     <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <%include ../partials/head%>
   </head>
   <body>
-    <header><%include ../partials/header%></header>
+    <%include ../partials/header%>
 
-    <h1>Welcome To Cat VS Baby!</h1>
 <br></br>
-    <h1>Click The Cutest Photo To Play!</h1>
+    <h1>Which One Is Cuter?</h1>
+    <h3>just click to play and be sure to check out the top ranking cuties</h3>
 
         <p><%=randomCat.description%></p>
         <img src="<%=randomCat.url%>" alt="<%=randomCat.description%>">

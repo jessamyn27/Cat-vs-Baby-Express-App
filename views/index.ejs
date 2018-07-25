@@ -2,7 +2,8 @@
 <html>
   <head>
     <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <%include ./partials/head%>
+
   </head>
   <body>
 <h1>Click The Cutest Photo To Play</h1>
@@ -25,9 +26,13 @@
   <h3>Wanna Add Your Cute Photo?
 <br>
     Log In To Set Up Your Profile!</h3>
-<a href="/auth/login">Log In</a></li>
-<br>
-<a href="/auth/register">Register</a>
+    <a href="/auth/register">
+    <button type="button">Login Here</button>
+    </a>
+    <br>
+<a href="/auth/register">
+<button type="button">Register Here</button>
+</a>
 
 
 
