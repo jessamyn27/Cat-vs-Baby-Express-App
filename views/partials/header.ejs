@@ -10,7 +10,8 @@
     <%}else {%>
       <a href="/auth/login">Login</a>
     <%}%>
-  </li>
+  </li> <%if (session.loggedIn === true) {%>
   <li><a href="/users/<%=session._id%>">Profile</a> </li>
+  <%}%>
 </ul>
 </nav>
