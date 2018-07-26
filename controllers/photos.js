@@ -62,18 +62,25 @@ router.post('/:id', async (req,res, err)=>{
 })
 
 //5b58e31c05bd9b687f499ef2
-router.delete('/delete/:id', async(req,res,err)=>{
+router.delete('/delete/:doc/:userid/:id', async(req,res,err)=>{
   try {
-    const foundPhoto = await Photos.findOne({'catPhotos': {$elemMatch: {_id: req.params.id}}})
+    let foundPhoto;
+    if (req.params.doc === 'cat') {
+     foundPhoto = await Photos.findOne({'catPhotos': {$elemMatch: {_id: req.params.id}}}) }else {
+       foundPhoto = await Photos.findOne({'babyPhotos': {$elemMatch: {_id: req.params.id}}})
+    }
     // const foundPhoto = await Photos.findOne({'catPhotos.id': req.params.id})
     // const foundPhoto = await Photos.find({})
     
     console.log(req.params.id, 'id for photo');
     console.log(foundPhoto, 'found photo');
-    foundPhoto.catPhotos.splice(0,1);
+    if (req.params.doc === 'cat') {
+    foundPhoto.catPhotos.splice(0,1);} else {
+      foundPhoto.babyPhotos.splice(0,1);
+    }
     console.log(foundPhoto);
     foundPhoto.save();
-    res.redirect(`/users/${req.params.id}`);
+    res.redirect(`/users/${req.params.userid}`);
   } catch (err) {
  console.log(err);
   }

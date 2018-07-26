@@ -32,7 +32,7 @@
       <%=users.userName%>'s Cute Cat Photos'</h1>
     <% for (let i = 0; i<cats.length; i++) {%>
       <img src="<%=cats[i].url%>" alt="<%=cats[i].description%>">
-      <form action='/photos/delete/<%=cats[i].id%>?_method=DELETE' method="POST">
+      <form action='/photos/delete/cat/<%=users._id%>/<%=cats[i].id%>?_method=DELETE' method="POST">
       <button type="submit">Delete Photo</button>
       </form>
       <%}%>
@@ -41,6 +41,9 @@
           <%=users.userName%>'s Cute Baby Photos'</h1>
         <% for (let i = 0; i<babies.length; i++) {%>
           <img src="<%=babies[i].url%>" alt="<%=babies[i].description%>">
+          <form action='/photos/delete/baby/<%=users._id%>/<%=babies[i].id%>?_method=DELETE' method="POST">
+            <button type="submit">Delete Photo</button>
+            </form>
           <%}%>
 
 
