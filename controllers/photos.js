@@ -59,23 +59,23 @@ router.post('/:id', async (req, res, err) => {
             url: req.body.url
           }]
         })
-        console.log('testtetstetste')
-        console.log(createdPhoto, 'created photos in mode')
+        // console.log('testtetstetste')
+        // console.log(createdPhoto, 'created photos in mode')
         foundUser.photos = createdPhoto._id;
-        console.log(foundUser, 'found user with id?');
+        // console.log(foundUser, 'found user with id?');
         foundUser.save();
         res.redirect(`/users/${req.params.id}`);
       } else if (req.body.cutePhoto === 'babyPhoto') {
-        console.log('hitting baby creat')
+        // console.log('hitting baby creat')
         const createdPhoto = await Photos.create({
           babyPhotos: [{
             url: req.body.url
           }]
         })
-        console.log('testtetstetste')
-        console.log(createdPhoto, 'created photos in mode')
+        // console.log('testtetstetste')
+        // console.log(createdPhoto, 'created photos in mode')
         foundUser.photos = createdPhoto._id;
-        console.log(foundUser, 'found user with id?');
+        // console.log(foundUser, 'found user with id?');
         foundUser.save();
         res.redirect(`/users/${req.params.id}`);
       }

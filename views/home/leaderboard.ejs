@@ -7,21 +7,13 @@
   <body>
   <%include ../partials/header%>
   <h1>Top Ranking Cuteness</h1>
-  <p><%=users.photos.catPhotos[1].description%></p>
-  <a href="/users">
-  <img src="<%=users.photos.catPhotos[1].url%>" alt="<%=users.photos.catPhotos[1].url%>"
-  ></a>
-  <br></br>
-  <!-- set up a tag href on each photo that takes you to the homepage -->
+<ul class="leaderboard">
+  <% for (var i = 0; i < 10; i++) {%>
+<li><p>This Cutie Is Ranked #<%=(i+1)%></p><img src="<%=photos[i].url%>" alt="<%=photos[i].description%>">
 
-  <p><%=users.photos.babyPhotos[0].description%></p>
-  <a href="/users">
-  <img src="<%=users.photos.babyPhotos[0].url%>" alt="<%=users.photos.catPhotos[1].url%>"
-  ></a>
-
-
-  <!-- loop through array of photos and select the top 20 with image, name (description) -->
-
+</li>
+<%}%>
+</ul>
     <%include ../partials/footer%>
   </body>
 </html>
