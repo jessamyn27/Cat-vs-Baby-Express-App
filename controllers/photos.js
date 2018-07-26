@@ -10,7 +10,9 @@ router.get('/babies/showall', async(req,res,err)=>{
     const allBabies = await Photos.find({babyPhotos: {$exists: true}});
     console.log(allBabies, 'found babies');
     res.render('photos/allBabies.ejs', {
-      photos: allBabies
+      photos: allBabies,
+      session: req.session
+
     })
   } catch (err) {
     console.log('hitting err')
@@ -25,12 +27,14 @@ router.get('/cats/showall', async (req,res,err)=>{
   try {
     const allCats = await Photos.find({catPhotos: {$exists: true}});
     res.render('photos/allCats.ejs', {
-      photos: allCats
+      photos: allCats,
+      session: req.session
+
     })
   } catch (err){
     res.send(err);
   }
-  // res.render('photos/allCats.ejs', {photos: PhotoSeeds});
+
 });
 
 router.post('/:id', async (req,res, err)=>{
@@ -52,9 +56,9 @@ router.post('/:id', async (req,res, err)=>{
 
   } catch(err) {
 
-  }  
+  }
 
-  
+
 })
 
 //5b58e31c05bd9b687f499ef2
@@ -73,8 +77,8 @@ router.delete('/delete/:id', async(req,res,err)=>{
   } catch (err) {
  console.log(err);
   }
-  
-  
+
+  res.send('delete route')
 })
 
 module.exports = router;

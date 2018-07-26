@@ -6,7 +6,9 @@ const User = require('../models/userSeeds');
 router.get('/', (req, res) => {
 
       res.render('index', {
-        users: User[0]
+        session: req.session
+
+        // users: User[0]
         //grabbing info 'user' is a variable name in the ejs "User is what we just called the model (above) to require"  //     });
   });
 });

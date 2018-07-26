@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
   // User.find({}, (err, foundUsers) => {
 
       res.render('users/users.ejs', {
-        users: User[0]
+        session: req.session
+
+        // users: User[0]
         //grabbing info 'user' is a variable name in the ejs "User is what we just called the model (above) to require"  //     });
   });
 });
@@ -20,22 +22,38 @@ router.get('/', (req, res) => {
 router.get('/:id', async(req, res,err) => {
   try {
     const foundUser = await User.findById(req.params.id);
+    console.log(foundUser.photos, 'this is found user in profile');
+    if (foundUser.photos !== undefined) {
+
+
     const photoID = foundUser.photos;
     const foundPhotos = await Photo.findById(photoID);
     const allCats = foundPhotos.catPhotos;
     const allBabies = foundPhotos.babyPhotos;
-    console.log(foundUser.profilePicture);
+    console.log(foundUser, 'FOUND UAERS' );
 
     res.render('users/users.ejs', {
       users: foundUser,
       cats: allCats,
-      babies: allBabies
-    })
-  } catch (err) {
-    console.log(err);
-  }
-  res.send('catch hit')
+      babies: allBabies,
+      session: req.session
+
 });
+} else {
+  res.render('users/users.ejs', {
+    users: foundUser,
+    session: req.session,
+    cats: [],
+    babies: []
+  })
+}
+  } catch (err) {
+    const foundUser = await User.findById(req.params.id);
+  console.log(foundUser, 'ERRROR')  ;
+res.send(err)
+}
+})
+
 
 // PUT ROUTE / EDIT
 // /user/:id/update - (photos are not included in the update request , only profile information);
@@ -58,7 +76,7 @@ router.put('/:id/update', async(req, res,err) => {
   } else {
     foundUser.profilePicture = req.body.profilePicture;
    }
-  
+
   foundUser.bio = req.body.bio;
 
   console.log(foundUser);
@@ -73,6 +91,7 @@ router.post('/', (req, res) => {
 // DELETE ROUTE
 // /user/delete/:id - Delete user account ( Removes all photos owned)
 router.delete('/:id', (req, res) => {
+
   res.redirect('/users')
 });
 
