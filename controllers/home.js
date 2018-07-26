@@ -61,13 +61,36 @@ router.get('/', async (req, res, err) => {
 
 
 // /home/leaderBoard - Global Leaderboard
-router.get('/leaderboard', (req, res) => {
-  // display top 20 ranked photos for loop
-  res.render('home/leaderboard.ejs', {
-  //   users: User[0]
-  session: req.session
-  // });
-});
+router.get('/leaderboard', async (req, res, err) => {
+  try {
+    const allPhotos = await Photo.find({})
+    const rankPhotos = []
+    // console.log(allPhotos[1].catPhotos);
+    for (var i = 0; i < allPhotos.length; i++) {
+      // console.log(allPhotos[i]);
+      for (var p = 0; p < allPhotos[i].catPhotos.length; p++) {
+        rankPhotos.push(allPhotos[i].catPhotos[p]);
+      }
+    }
+    for (var i = 0; i < allPhotos.length; i++) {
+      // console.log(allPhotos[i]);
+      for (var p = 0; p < allPhotos[i].babyPhotos.length; p++) {
+        rankPhotos.push(allPhotos[i].babyPhotos[p]);
+      }
+    }
+    rankPhotos.sort(function compareNumbers(a, b) {
+      return b.rank - a.rank;
+
+    })
+    console.log(rankPhotos);
+    res.render('home/leaderboard.ejs', {
+    session: req.session, photos: rankPhotos
+  });
+
+  } catch (err) {
+
+  }
+
 });
 // // /home/about - about page with description of rules
 router.get('/about', (req, res) => {
