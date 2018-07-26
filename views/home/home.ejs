@@ -16,12 +16,13 @@
     <h3>just click to play and be sure to check out the top ranking cuties</h3>
 
         <p><%=randomCat.description%></p>
-        <img src="<%=randomCat.url%>" alt="<%=randomCat.description%>">
-        <br></br>
+        <form action='/home/<%=randomCat._id%>/cat?_method=PUT'method='POST'><button type="submit" name="button"><img src="<%=randomCat.url%>" alt="<%=randomCat.description%>"></button>
+        </form><br></br>
 
 
         <p><%=randomBaby.description%></p>
-        <img src="<%=randomBaby.url%>" alt="<%=randomBaby.description%>">
+        <form action='/home/<%=randomBaby._id%>/baby?_method=Put'method='POST'><button type="submit" name="button"><img src="<%=randomBaby.url%>" alt="<%=randomBaby.description%>"></button>
+        </form>
 
     <%include ../partials/footer%>
   </body>

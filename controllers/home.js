@@ -59,6 +59,7 @@ router.get('/', async (req, res, err) => {
   // display random display of id in catPhotos against id in babyPhotos
 });
 
+
 // /home/leaderBoard - Global Leaderboard
 router.get('/leaderboard', (req, res) => {
   // display top 20 ranked photos for loop
@@ -76,6 +77,54 @@ router.get('/about', (req, res) => {
 
   });
 });
+
+// route for photos being clicked and ranked (game)
+router.put('/:photoID/:doc', async (req, res, err) => {
+  try {
+    let foundPhoto;
+    console.log(req.params.doc);
+    if (req.params.doc === 'cat') {
+      foundPhoto = await Photo.findOne({
+        'catPhotos': {
+          $elemMatch: {
+            _id: req.params.photoID
+          }
+        }
+      })
+    } else {
+      foundPhoto = await Photo.findOne({
+        'babyPhotos': {
+          $elemMatch: {
+            _id: req.params.photoID
+          }
+        }
+      })
+    }
+console.log(foundPhoto, 'this is our cat photo');
+if (req.params.doc === 'cat') {
+  foundPhoto.catPhotos[0].rank++
+
+
+} else if (req.params.doc === 'baby') {
+  foundPhoto.babyPhotos[0].rank++
+
+}
+foundPhoto.save()
+console.log(foundPhoto);
+
+res.redirect('/home')
+  } catch (err) {
+    console.log(err, 'err for cat photo');
+
+  }
+// console.log('test photoID');
+
+
+
+
+
+
+})
 
 
 module.exports = router;
