@@ -50,6 +50,8 @@ router.get('/:id', async(req, res,err) => {
   } catch (err) {
     const foundUser = await User.findById(req.params.id);
   console.log(foundUser, 'ERRROR')  ;
+    const findPhotos = await Photo.findById(foundUser.photos);
+    console.log(findPhotos, 'photos?');
 res.send(err)
 }
 })
