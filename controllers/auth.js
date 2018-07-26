@@ -28,7 +28,7 @@ router.post('/login', async (req, res, err) => {
       req.session.password = true;
       req.session.loggedIn = true;
       req.session.userName = req.body.userName;
-      console.log(req.session)
+      // console.log(req.session)
       res.redirect('/home');
     } else {
       console.log('password was incorrect')
@@ -62,14 +62,16 @@ router.post('/register', (req, res) => {
         url: req.body.upload
       }]
     }, (err, createdPhoto) => {
-      console.log(createdPhoto, 'created photos in mode')
+      // console.log(createdPhoto, 'created photos in mode')
       newUser.photos = createdPhoto._id;
-      console.log(newUser, 'new user');
+      // console.log(newUser, 'new user');
       User.create(newUser, (err, createdUser) => {
-        console.log(createdUser, 'this is the created user in DB');
-        console.log(req.session, 'req.session');
+        // console.log(createdUser, 'this is the created user in DB');
+        // console.log(req.session, 'req.session');
         req.session.userName = createdUser.username;
         req.session.loggedIn = true;
+        req.session._id = createdUser._id;
+        console.log(req.session._id, 'USER ID')
         res.redirect('/home')
       })
 
@@ -82,12 +84,12 @@ router.post('/register', (req, res) => {
         url: req.body.upload
       }]
     }, (err, createdPhoto) => {
-      console.log(createdPhoto, 'created photos')
+      // console.log(createdPhoto, 'created photos')
       newUser.photos = createdPhoto._id;
-      console.log(newUser, 'new user');
+      // console.log(newUser, 'new user');
       User.create(newUser, (err, createdUser) => {
-        console.log(createdUser, 'this is the created user in DB');
-        console.log(req.session, 'req.session');
+        // console.log(createdUser, 'this is the created user in DB');
+        // console.log(req.session, 'req.session');
         req.session.userName = createdUser.username;
         req.session.loggedIn = true;
         res.redirect('/home')

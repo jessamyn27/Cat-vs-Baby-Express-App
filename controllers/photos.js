@@ -57,15 +57,24 @@ router.post('/:id', async (req,res, err)=>{
   
 })
 
+//5b58e31c05bd9b687f499ef2
 router.delete('/delete/:id', async(req,res,err)=>{
   try {
-    const foundPhoto = await Photos.find({catPhotos: {$exists: true ,id: req.params.id}})
-    console.log(foundPhoto, 'found photo')
+    const foundPhoto = await Photos.findOne({'catPhotos': {$elemMatch: {_id: req.params.id}}})
+    // const foundPhoto = await Photos.findOne({'catPhotos.id': req.params.id})
+    // const foundPhoto = await Photos.find({})
+    
+    console.log(req.params.id, 'id for photo');
+    console.log(foundPhoto, 'found photo');
+    foundPhoto.catPhotos.splice(0,1);
+    console.log(foundPhoto);
+    foundPhoto.save();
+    res.redirect(`/users/${req.params.id}`);
   } catch (err) {
  console.log(err);
   }
   
-  res.send('delete route')
+  
 })
 
 module.exports = router;

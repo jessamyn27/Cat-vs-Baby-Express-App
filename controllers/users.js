@@ -32,9 +32,9 @@ router.get('/:id', async(req, res,err) => {
       babies: allBabies
     })
   } catch (err) {
-
+    console.log(err);
   }
-  res.send('page displaying profile info / also our edit page')
+  res.send('catch hit')
 });
 
 // PUT ROUTE / EDIT

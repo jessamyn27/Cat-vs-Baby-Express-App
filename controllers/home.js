@@ -24,7 +24,7 @@ router.get('/', async(req, res,err) => {
    const allCats = [];
     
    foundPhotos.forEach((e)=>{
-     console.log(e, 'first loop')
+    //  console.log(e, 'first loop')
      e.babyPhotos.forEach((e)=>{ 
        
        allBabies.push(e);
@@ -32,7 +32,7 @@ router.get('/', async(req, res,err) => {
     })
 
     foundPhotos.forEach((e)=>{
-      console.log(e, 'first loop')
+      // console.log(e, 'first loop')
       e.catPhotos.forEach((e)=>{ 
         
         allCats.push(e);
