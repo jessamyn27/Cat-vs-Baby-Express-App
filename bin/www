@@ -91,6 +91,6 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/';
-
-mongoose.connect(mongoUri);
+// var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/';
+//
+// mongoose.connect(mongoUri);

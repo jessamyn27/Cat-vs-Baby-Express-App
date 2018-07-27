@@ -4,24 +4,20 @@
     <title></title>
     <%include ../partials/head%>
   </head>
-  <body>
+  <body class="splash">
     <%include ../partials/header%>
-
-<br></br>
 
     <h2><%if (session.loggedIn === false){%>
 
     <%}%> </h2>
     <h1>Which One Is Cuter?</h1>
     <h3>just click to play and be sure to check out the top ranking cuties</h3>
-
-        <p><%=randomCat.description%></p>
-        <form action='/home/<%=randomCat._id%>/cat?_method=PUT'method='POST'><button type="submit" name="button"><img src="<%=randomCat.url%>" alt="<%=randomCat.description%>"></button>
+        <!-- <p><%=randomCat.description%></p> -->
+        <form action='/home/<%=randomCat._id%>/cat?_method=PUT'method='POST'><button type="submit" name="button"><img class="splash-img" src="<%=randomCat.url%>" alt="<%=randomCat.description%>"></button>
         </form><br></br>
 
-
-        <p><%=randomBaby.description%></p>
-        <form action='/home/<%=randomBaby._id%>/baby?_method=Put'method='POST'><button type="submit" name="button"><img src="<%=randomBaby.url%>" alt="<%=randomBaby.description%>"></button>
+        <!-- <p><%=randomBaby.description%></p> -->
+        <form action='/home/<%=randomBaby._id%>/baby?_method=Put'method='POST'><button type="submit" name="button"><img class="splash-img" src="<%=randomBaby.url%>" alt="<%=randomBaby.description%>"></button>
         </form>
 
     <%include ../partials/footer%>

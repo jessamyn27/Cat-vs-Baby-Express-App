@@ -6,36 +6,39 @@
 
   </head>
   <body class="splash">
-<h1>Click The Cutest Photo To Play</h1>
+<h2>Click The Cutest Photo To Play</h2>
     <h3>the original...</h3>
     <h1>Cat VS Baby!</h1>
-<!-- // random selection of one baby photo and one cat photo -->
-<p><%=users.photos.catPhotos[1].description%></p>
+
+<!-- <p><%=users.photos.catPhotos[1].description%></p> -->
+
 <a href="/home">
-<img src="<%=users.photos.catPhotos[1].url%>" alt="<%=users.photos.catPhotos[1].url%>"
+<img class="splash-img" src="<%=users.photos.catPhotos[0].url%>" alt="<%=users.photos.catPhotos[0].url%>"
+></a>
+<!-- <p><%=users.photos.babyPhotos[0].description%></p> -->
+<a href="/home">
+<img class="splash-img" src="<%=users.photos.babyPhotos[0].url%>" alt="<%=users.photos.catPhotos[1].url%>"
 ></a>
 <br></br>
-<!-- set up a tag href on each photo that takes you to the homepage -->
-
-<p><%=users.photos.babyPhotos[0].description%></p>
-<a href="/home">
-<img src="<%=users.photos.babyPhotos[0].url%>" alt="<%=users.photos.catPhotos[1].url%>"
-></a>
-
-
-  <h3>Wanna Add Your Cute Photo?
+<br></br>
+<br></br>
+<br></br>
 <br>
+<div>
+  <h3>Wanna Add Your Cute Photo?
+</div>
+<br>
+<div>
     Log In To Set Up Your Profile!</h3>
     <a href="/auth/login">
     <button type="button">Login Here</button>
     </a>
+  </div>
     <br>
+    <div>
 <a href="/auth/register">
 <button type="button">Register Here</button>
 </a>
-
-
-
-
+</div>
   </body>
 </html>

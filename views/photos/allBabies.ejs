@@ -7,14 +7,14 @@
   <title>All uploaded babies</title>
   <%include ../partials/head%>
 </head>
-<body class="allBabies">
+<body class="splash">
 <%include ../partials/header%>
   <h1>Babies! Babies! Babies!</h1>
   <% photos.forEach((e)=>{ %>
   <%console.log(e.babyPhotos, 'all baby photos');%>
     <% e.babyPhotos.forEach((e)=>{ %>
-      <img src="<%=e.url%>" alt="<%=e.description%>">
-      <p><%=e.description%> </p>
+      <img class="splash-img" src="<%=e.url%>" alt="<%=e.description%>">
+      <!-- <p><%=e.description%> </p> -->
     <%})%>
   <%})%>
 

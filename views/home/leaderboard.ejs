@@ -4,15 +4,28 @@
     <title></title>
     <%include ../partials/head%>
   </head>
-  <body>
+  <body class="splash">
   <%include ../partials/header%>
   <h1>Top Ranking Cuteness</h1>
 <ul class="leaderboard">
   <% for (var i = 0; i < 10; i++) {%>
-<li><p>This Cutie Is Ranked #<%=(i+1)%></p><img src="<%=photos[i].url%>" alt="<%=photos[i].description%>">
+<li>
+  <!-- <p>This Cutie Is Ranked #<%=(i+1)%></p> -->
+  <img class="splash-img" src="<%=photos[i].url%>" alt="<%=photos[i].description%>">
 
 </li>
 <%}%>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
 </ul>
     <%include ../partials/footer%>
   </body>
