@@ -1,3 +1,17 @@
+/* color Palate HEX
+
+darkish blue
+#264653
+lighter blue
+#2a9d8f
+yellow-tan
+#e9c46a
+orange
+#f4a261
+orange-red
+#e76f51
+ */
+
 body {
   background-color: #DEE2D6;
   padding: 30px;
@@ -51,3 +65,46 @@ footer {
     background-repeat:   no-repeat;
     background-size:     cover;
     }
+
+    /* PROFILE STYLES */
+
+    .profile-h1 {
+      text-align: center;
+      color: #9f7e69;
+      
+    }
+
+    .profile-img {
+      display: block;
+      border-radius: 50%;
+      width: 50vw;
+      height: 60vh;
+      margin: 0 auto;
+
+    }
+
+    .profile-flexCon {
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+      height: 50vh;
+      margin: 0 auto;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .profile-textForm {
+      width: 40%
+    }
+
+    .profile-delete {
+      display: block;
+      margin: 10vh auto;
+    }
+
+    .profile-p {
+      
+    }
+
+    
+    

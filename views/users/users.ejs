@@ -5,61 +5,61 @@
     <title></title>
 
   </head>
-  <body class="profile">
+  <body >
 
   <%include ../partials/header%>
-    <h1>
+    <h1 class='profile-h1'>
       <%=users.userName%>'s Profile</h1>
 
-    <img src="<%=users.profilePicture%>" alt="">
-    <form action="/users/<%=users._id%>/update?_method=PUT" method="POST">
+    <img class='profile-img'src="<%=users.profilePicture%>" alt="">
+    <form class ='profile-flexCon' action="/users/<%=users._id%>/update?_method=PUT" method="POST">
 
-      <input type="url" name="profilePicture" placeholder="Upload Profile Pic">
+      <input class='profile-textForm' type="url" name="profilePicture" placeholder="Upload Profile Pic">
 
-      <button type="editProfile">Edit Profile</button>
+     
 
-      <br>
-      <textarea name="bio" rows="3" cols="40">
+      
+      <textarea class='profile-textarea' name="bio" rows="3" cols="40">
         <%=users.bio%>
       </textarea>
-      <br></br>
+      <button class='profile-submit' type="editProfile">Edit Profile</button>
 
-      <br>
-      <br>
-      <input type="submit">
+      
+      
     </form>
-    <h1>
-      <%=users.userName%>'s Cute Cat Photos'</h1>
+    <h1 class='profile-h1'>
+      <%=users.userName%>'s Cute Cat Photos</h1>
     <% for (let i = 0; i<cats.length; i++) {%>
-      <img src="<%=cats[i].url%>" alt="<%=cats[i].description%>">
+      <img class='profile-img' src="<%=cats[i].url%>" alt="<%=cats[i].description%>">
       <form action='/photos/delete/cat/<%=users._id%>/<%=cats[i].id%>?_method=DELETE' method="POST">
-      <button type="submit">Delete Photo</button>
+      <button class='profile-delete' type="submit">Delete Photo</button>
       </form>
       <%}%>
 
-        <h1>
-          <%=users.userName%>'s Cute Baby Photos'</h1>
+        <h1 class='profile-h1'>
+          <%=users.userName%>'s Cute Baby Photos</h1>
         <% for (let i = 0; i<babies.length; i++) {%>
-          <img src="<%=babies[i].url%>" alt="<%=babies[i].description%>">
+          <img class='profile-img' src="<%=babies[i].url%>" alt="<%=babies[i].description%>">
           <form action='/photos/delete/baby/<%=users._id%>/<%=babies[i].id%>?_method=DELETE' method="POST">
-            <button type="submit">Delete Photo</button>
+            <button class="profile-delete" type="submit">Delete Photo</button>
             </form>
           <%}%>
 
-
-            <form action='/photos/<%=users._id%>' method="POST">
+          <h1 class="profile-h1"> Upload a new photo </h1>
+            <form class='profile-flexCon' action='/photos/<%=users._id%>' method="POST">
+             
+               <p class='profile-p'>What type of Photo is it?</p>
               <select name="cutePhoto">
 
                 <option value="catPhoto">Cute Animal</option>
                 <option value="babyPhoto">Cute Baby</option>
+              
                 <input type="url" name="url" placeholder="Upload A Cute Photo" </select>
                 <textarea name="description" id="" cols="30" rows="10">Cutie's Name and Favorite Hobby?</textarea>
                 <button type="submit">Upload Photo</button>
             </form>
 
-            <form action="/photos/<%=users.id%>?_method=DELETE" method="POST"><select name="cutePhoto">
-              <button type="submit">Delete Photo</button>
-            </form>
+            
             <%include ../partials/footer%>
 </body>
 
