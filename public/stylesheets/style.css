@@ -74,7 +74,7 @@ footer {
       
     }
 
-    .profile-img {
+    .profile-img, .allPhotos {
       display: block;
       border-radius: 50%;
       width: 50vw;
@@ -102,9 +102,10 @@ footer {
       margin: 10vh auto;
     }
 
-    .profile-p {
-      
+    .allDescription {
+      text-align: center;
     }
+
 
     
     
