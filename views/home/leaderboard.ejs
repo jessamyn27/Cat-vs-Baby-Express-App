@@ -6,10 +6,10 @@
   </head>
   <body>
   <%include ../partials/header%>
-  <h1>Top Ranking Cuteness</h1>
+  <h1 class='leaderText'>Top Ranking Cuteness</h1>
 <ul class="leaderboard">
   <% for (var i = 0; i < 10; i++) {%>
-<li><p>This Cutie Is Ranked #<%=(i+1)%></p><img src="<%=photos[i].url%>" alt="<%=photos[i].description%>">
+<li><p class='leaderText'>This Cutie Is Ranked #<%=(i+1)%></p><img class='leaderImg' src="<%=photos[i].url%>" alt="<%=photos[i].description%>">
 
 </li>
 <%}%>

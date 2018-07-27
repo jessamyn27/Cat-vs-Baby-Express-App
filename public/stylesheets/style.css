@@ -30,7 +30,8 @@ header {
 }
 footer {
   color: #454BD0;
-  text-align: left
+  text-align: left;
+  font-family: 'Permanent Marker', cursive;
 
 }
   li {
@@ -39,6 +40,7 @@ footer {
     list-style-type: none;
     font-size: 20px;
     font-family: monospace;
+    display: inline;
  }
   li a {
     text-decoration: none;
@@ -66,6 +68,28 @@ footer {
     background-size:     cover;
     }
 
+    nav {
+      
+    }
+    .header{
+      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-content: space-around;
+      background-color: #454BD0;
+      border: #9f7e69 solid 1px;
+      box-shadow: inset -20px -3px 1px 14px rgb(160, 104, 233);
+    }
+  .header li {
+    background-color: #F7AFA4;
+    border: grey solid 1px;
+    margin: 1vh 8vw; 
+    padding: .25vh 4vw;
+    font-family: 'Permanent Marker', cursive;
+    
+  }
+
     /* PROFILE STYLES */
 
     .profile-h1 {
@@ -74,12 +98,14 @@ footer {
       
     }
 
-    .profile-img, .allPhotos {
+    .profile-img, .allPhotos, .leaderImg {
       display: block;
       border-radius: 50%;
       width: 50vw;
       height: 60vh;
       margin: 0 auto;
+      border: #454BD0 solid 2px;
+      box-shadow: -9px 5px 0px 2px #F7AFA4;
 
     }
 
@@ -102,10 +128,15 @@ footer {
       margin: 10vh auto;
     }
 
-    .allDescription {
+    .allDescription, .leaderText, .home-text {
       text-align: center;
+      font-family: 'Permanent Marker', cursive;
     }
 
+
+    .aboutText {
+      text-align: justify;
+    }
 
     
     
