@@ -98,7 +98,7 @@ footer {
       
     }
 
-    .profile-img, .allPhotos, .leaderImg {
+    .profile-img, .allPhotos, .leaderImg, img {
       display: block;
       border-radius: 50%;
       width: 50vw;
@@ -128,7 +128,7 @@ footer {
       margin: 10vh auto;
     }
 
-    .allDescription, .leaderText, .home-text {
+    .allDescription, .leaderText, .home-text, h1, p, h3 {
       text-align: center;
       font-family: 'Permanent Marker', cursive;
     }
@@ -137,6 +137,26 @@ footer {
     .aboutText {
       text-align: justify;
     }
+
+    .no-button  {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        display: block;
+        margin: 0 auto;
+
+    } 
+
+    .splashB {
+      display: block;
+      width: 10vw;
+      margin: 0 auto;
+    }
+
 
     
     

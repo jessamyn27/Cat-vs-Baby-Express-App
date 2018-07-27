@@ -16,12 +16,12 @@
     <h3 class="home-text">just click to play and be sure to check out the top ranking cuties</h3>
 
         <p class="home-text"><%=randomCat.description%></p>
-        <form action='/home/<%=randomCat._id%>/cat?_method=PUT'method='POST'><button type="submit" name="button"><img src="<%=randomCat.url%>" alt="<%=randomCat.description%>"></button>
+        <form action='/home/<%=randomCat._id%>/cat?_method=PUT'method='POST'><button class='no-button' type="submit" name="button"><img class="splash-img" src="<%=randomCat.url%>" alt="<%=randomCat.description%>"></button>
         </form><br></br>
 
 
         <p class="home-text"><%=randomBaby.description%></p>
-        <form action='/home/<%=randomBaby._id%>/baby?_method=Put'method='POST'><button type="submit" name="button"><img src="<%=randomBaby.url%>" alt="<%=randomBaby.description%>"></button>
+        <form action='/home/<%=randomBaby._id%>/baby?_method=Put'method='POST'><button class='no-button' type="submit" name="button"><img class="splash-img" src="<%=randomBaby.url%>" alt="<%=randomBaby.description%>"></button>
         </form>
 
     <%include ../partials/footer%>
