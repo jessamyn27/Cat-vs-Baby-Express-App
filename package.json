@@ -2,7 +2,8 @@
   "name": "cat-v-baby",
   "version": "1.0.0",
   "engines": {
-    "node": "8.11.x"
+    "node": "8.11.3",
+    "npm": "6.2.0"
   },
   "private": true,
   "scripts": {
