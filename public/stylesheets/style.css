@@ -13,10 +13,11 @@ orange-red
  */
 
 body {
-  background-color: #DEE2D6;
-  padding: 30px;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #BF9B8B;
+  background-color: #EBEAE6;
+  /* padding: 10px; */
+  font: 200px;
+  font-family: monospace;
+  color: #454BD0;
   text-align: left;
   list-style-type: none;
   text-decoration: none;
@@ -28,28 +29,27 @@ header {
 
 }
 footer {
-  color: #C09B8A;
-  text-align: center
+  color: #454BD0;
+  text-align: left
 
 }
   li {
-    background: #C9E2D9;
-    margin: 0.5em 0;
-    padding: 0.3em;
-    border-right: 1em solid #BF9B8B;
+
     text-decoration: none;
     list-style-type: none;
-    font-size: 10px
+    font-size: 20px;
+    font-family: monospace;
  }
   li a {
     text-decoration: none;
     list-style-type: none;
  }
   a:link {
-    color: blue }
+    color: #F7AFA4 }
   a:visited {
-    color: #BF9B8B;
+    color: #454BD0;
     text-decoration: none;
+    border-radius: 30px
  }
   address {
     margin-top: 1em;
