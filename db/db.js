@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 // create our db and connect
+
+// var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/';
+
+// mongoose.connect(mongoUri);
 mongoose.connect('mongodb://localhost/');
 
 mongoose.connection.on('connected', () => {
