@@ -1,6 +1,6 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #2: "Cat vs Baby" full stack app
+#  Project #2: "Cat vs Baby" full stack app
 ### User Stories
-
+ cat vs baby is a game where you can click between two photos, one of a cat, and one of a baby.  every click adds points to that photo
 
 ### Wireframes
 

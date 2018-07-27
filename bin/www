@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+var mongoose = require('mongoose')
 var app = require('../app');
 var debug = require('debug')('cat-vs-baby:server');
 var http = require('http');

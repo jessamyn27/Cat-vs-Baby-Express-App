@@ -9,12 +9,13 @@
 </head>
 <body class="splash">
   <%include ../partials/header%>
-  <h1>Cats! Cats! Cats!</h1>
+  <h1 class="allDescription">Cats! Cats! Cats!</h1>
 <% for (let i = 0; i < photos.length; i++){%>
   <%console.log(photos[i].catPhotos)%>
   <%for (let p = 0; p < photos[i].catPhotos.length; p++){%>
-    <img class="splash-img" src="<%=photos[i].catPhotos[p].url%>" alt="<%=photos[i].catPhotos[p].description%>">
-    <p><%=photos[i].catPhotos[p].description%></p>
+
+    <img class='allPhotos' src="<%=photos[i].catPhotos[p].url%>" alt="<%=photos[i].catPhotos[p].description%>">
+    <p class="allDescription"><%=photos[i].catPhotos[p].description%></p>
   <%}%>
 <%}%>
 

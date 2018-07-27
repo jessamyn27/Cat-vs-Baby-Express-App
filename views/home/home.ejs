@@ -10,14 +10,17 @@
     <h2><%if (session.loggedIn === false){%>
 
     <%}%> </h2>
-    <h1>Which One Is Cuter?</h1>
-    <h3>just click to play and be sure to check out the top ranking cuties</h3>
-        <!-- <p><%=randomCat.description%></p> -->
-        <form action='/home/<%=randomCat._id%>/cat?_method=PUT'method='POST'><button type="submit" name="button"><img class="splash-img" src="<%=randomCat.url%>" alt="<%=randomCat.description%>"></button>
+
+    <h1 class="home-text">Which One Is Cuter?</h1>
+    <h3 class="home-text">just click to play and be sure to check out the top ranking cuties</h3>
+
+        <p class="home-text"><%=randomCat.description%></p>
+        <form action='/home/<%=randomCat._id%>/cat?_method=PUT'method='POST'><button type="submit" name="button"><img src="<%=randomCat.url%>" alt="<%=randomCat.description%>"></button>
         </form><br></br>
 
-        <!-- <p><%=randomBaby.description%></p> -->
-        <form action='/home/<%=randomBaby._id%>/baby?_method=Put'method='POST'><button type="submit" name="button"><img class="splash-img" src="<%=randomBaby.url%>" alt="<%=randomBaby.description%>"></button>
+
+        <p class="home-text"><%=randomBaby.description%></p>
+        <form action='/home/<%=randomBaby._id%>/baby?_method=Put'method='POST'><button type="submit" name="button"><img src="<%=randomBaby.url%>" alt="<%=randomBaby.description%>"></button>
         </form>
 
     <%include ../partials/footer%>

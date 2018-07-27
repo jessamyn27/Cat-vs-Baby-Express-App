@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .splash-img {
      display: block;
      border-radius: 50%;
@@ -33,6 +34,21 @@ font-family: 'Love Ya Like A Sister', cursive;
 
 }
 
+=======
+/* color Palate HEX
+
+darkish blue
+#264653
+lighter blue
+#2a9d8f
+yellow-tan
+#e9c46a
+orange
+#f4a261
+orange-red
+#e76f51
+ */
+>>>>>>> 9cbed60efa8f4cb24cd8209bab0535a6e1699e8a
 
 body {
   background-color: #EBEAE6;
@@ -52,7 +68,8 @@ header {
 }
 footer {
   color: #454BD0;
-  text-align: left
+  text-align: left;
+  font-family: 'Permanent Marker', cursive;
 
 }
   li {
@@ -60,7 +77,12 @@ footer {
     text-decoration: none;
     list-style-type: none;
     font-size: 20px;
+<<<<<<< HEAD
     font-family: 'Love Ya Like A Sister', cursive;
+=======
+    font-family: monospace;
+    display: inline;
+>>>>>>> 9cbed60efa8f4cb24cd8209bab0535a6e1699e8a
  }
   li a {
     text-decoration: none;
@@ -69,10 +91,14 @@ footer {
 
  }
   a:link {
+<<<<<<< HEAD
     color: #F7AFA4
     font-family: 'Love Ya Like A Sister', cursive;
    }
 
+=======
+    color: #454BD0 }
+>>>>>>> 9cbed60efa8f4cb24cd8209bab0535a6e1699e8a
   a:visited {
     color: #454BD0;
     text-decoration: none;
@@ -82,3 +108,89 @@ footer {
     margin-top: 1em;
     padding-top: 1em;
     border-top: thin dotted }
+<<<<<<< HEAD
+=======
+
+    photos {
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    }
+
+    nav {
+      
+    }
+    .header{
+      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-content: space-around;
+      background-color: #454BD0;
+      border: #9f7e69 solid 1px;
+      box-shadow: inset -20px -3px 1px 14px rgb(160, 104, 233);
+    }
+  .header li {
+    background-color: #F7AFA4;
+    border: grey solid 1px;
+    margin: 1vh 8vw; 
+    padding: .25vh 4vw;
+    font-family: 'Permanent Marker', cursive;
+    
+  }
+
+    /* PROFILE STYLES */
+
+    .profile-h1 {
+      text-align: center;
+      color: #9f7e69;
+      
+    }
+
+    .profile-img, .allPhotos, .leaderImg {
+      display: block;
+      border-radius: 50%;
+      width: 50vw;
+      height: 60vh;
+      margin: 0 auto;
+      border: #454BD0 solid 2px;
+      box-shadow: -9px 5px 0px 2px #F7AFA4;
+
+    }
+
+    .profile-flexCon {
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+      height: 50vh;
+      margin: 0 auto;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .profile-textForm {
+      width: 40%
+    }
+
+    .profile-delete {
+      display: block;
+      margin: 10vh auto;
+    }
+
+    .allDescription, .leaderText, .home-text {
+      text-align: center;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+
+    .aboutText {
+      text-align: justify;
+    }
+
+    
+    
+>>>>>>> 9cbed60efa8f4cb24cd8209bab0535a6e1699e8a
